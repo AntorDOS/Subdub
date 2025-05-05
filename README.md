@@ -107,7 +107,7 @@ Step 7: Final Setup for Subdub Script
       
 Name: Jahid Hasan
 
-**GitHub:** [@JahidDOS](https://github.com/JahidDOS)
+**GitHub:** [@AntorDOS](https://github.com/JahidDOS)
 
 **LinkedIn:** [jahid-hasan](https://www.linkedin.com/in/jahid-hasan-antor/)
 
