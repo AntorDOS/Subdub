@@ -36,7 +36,7 @@ Verify the installation:
 
 ------------------------------------------------------------
 
-Step 2: Install Required Tools - sublist3r, findomain, and subevigil
+Step 2: Install Required Tools - sublist3r, findomain, massdns and subevigil
 
 subevigil (Custom made Tool by me):
 
@@ -74,7 +74,15 @@ Step 4: Install Findomain
 
 ------------------------------------------------------------
 
-Step 5: ProjectDiscovery Chaos Tool API Key
+Step 5: Install massdns
+
+    1. git clone https://github.com/blechschmidt/massdns.git
+    2. cd massdns
+    3. make
+    4. echo 'export PATH=$PATH:$HOME/massdns/bin' >> ~/.bashrc or ~/.zshrc
+    5. source ~/.bashrc or ~/.zshrc
+
+Step 6: ProjectDiscovery Chaos Tool API Key
 
     1. Visit: https://cloud.projectdiscovery.io/
     2. Create an account
@@ -83,13 +91,17 @@ Step 5: ProjectDiscovery Chaos Tool API Key
 
 ------------------------------------------------------------
 
-Step 6: Copy resolvers.txt to your home directory
+Step 7: Copy resolvers.txt to your home directory
 
     cp resolvers.txt /home/<your-username>
 
+Step 8: Copy subdomains-top1million-110000.txt to yout home directory
+
+    cp subdomains-top1million-110000.txt /home/<your-username>
+
 ------------------------------------------------------------
 
-Step 7: Final Setup for Subdub Script
+Step 9: Final Setup for Subdub Script
 
     chmod +x subdub.sh
     sudo cp subdub.sh /usr/local/bin/subdub
