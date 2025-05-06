@@ -81,11 +81,11 @@ function tools(){
 	
 	if command -v shuffledns &>/dev/null #shuffledns
 	then
-		shuffledns -silent -mode bruteforce -d $1 -r /home/$USER/resolvers.txt -w /home/$USER/subdomains-top1million-110000.txt | grep -vE "[INF]" > $sub/$sub_dir/$output-5.txt
+		shuffledns -silent -mode bruteforce -d $1 -r /home/$USER/resolvers.txt -w /home/$USER/wordlist.txt | grep -vE "[INF]" > $sub/$sub_dir/$output-5.txt
 
 	else
 		go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
-		shuffledns -silent -mode bruteforce -d $1 -r /home/$USER/Desktop/resolvers.txt -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt | grep -vE "[INF]" > $sub/$sub_dir/$output-5.txt
+		shuffledns -silent -mode bruteforce -d $1 -r /home/$USER/Desktop/resolvers.txt -w /home/$USER/wordlist.txt | grep -vE "[INF]" > $sub/$sub_dir/$output-5.txt
 
 	fi
 
@@ -130,8 +130,15 @@ function tools(){
 	done
         
 	 
-	
-	cat $sub/$sub_dir/${output}-total_sub.txt | sort | uniq | httpx-toolkit -silent -mc 200,404,403 > $sub/$sub_dir/${output}_alive_sub.txt
+	if command -v httpx &>/dev/null # httpx
+        then
+
+                cat $sub/$sub_dir/${output}-total_sub.txt | sort | uniq | httpx -silent -mc 200,404,403 > $sub/$sub_dir/${output}_alive_sub.txt
+        else
+                go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
+                cat $sub/$sub_dir/${output}-total_sub.txt | sort | uniq | httpx -silent -mc 200,404,403 > $sub/$sub_dir/${output}_alive_sub.txt
+
+        fi
 	echo
 	echo -e "${BYellow}Total Alive Subdomain Is: $(cat $sub/$sub_dir/${output}_alive_sub.txt | wc -l)"
 	echo
