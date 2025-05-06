@@ -54,17 +54,23 @@ subevigil (Custom made Tool by me):
 
 Step 3: Install Sublist3r
 
-    sudo pip install requests
+    python3 required
+    1. git clone https://github.com/aboul3la/Sublist3r.git
+    2. cd Sublist3r
+    3. pip3 install -r requirements.txt
+    4. sudo cp sublist3r.py /usr/local/bin/sublist3r
+    5. sudo cp -r subbrute /usr/local/bin/subbrute
+    
 
 ------------------------------------------------------------
 
 Step 4: Install Findomain
 
-    git clone https://github.com/findomain/findomain.git
-    cd findomain
-    cargo build --release
-    sudo cp target/release/findomain /usr/bin/
-    findomain
+    1. curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux.zip
+    2. unzip findomain-linux.zip
+    3. chmod +x findomain
+    4. sudo mv findomain /usr/bin/findomain
+    5. findomain --help
 
 ------------------------------------------------------------
 
