@@ -81,7 +81,7 @@ function tools(){
 	
 	if command -v shuffledns &>/dev/null #shuffledns
 	then
-		shuffledns -silent -mode bruteforce -d $1 -r /home/$USER/resolvers.txt -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt | grep -vE "[INF]" > $sub/$sub_dir/$output-5.txt
+		shuffledns -silent -mode bruteforce -d $1 -r /home/$USER/resolvers.txt -w /home/$USER/subdomains-top1million-110000.txt | grep -vE "[INF]" > $sub/$sub_dir/$output-5.txt
 
 	else
 		go install -v github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest
