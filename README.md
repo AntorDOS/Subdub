@@ -95,9 +95,9 @@ Step 7: Copy resolvers.txt to your home directory
 
     cp resolvers.txt /home/<your-username>
 
-Step 8: Copy subdomains-top1million-110000.txt to yout home directory
+Step 8: Copy wordlist.txt to yout home directory
 
-    cp subdomains-top1million-110000.txt /home/<your-username>
+    cp wordlist.txt /home/<your-username>
 
 ------------------------------------------------------------
 
